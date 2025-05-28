@@ -1,0 +1,11 @@
+picom --config ~/.config/picom.conf &
+tint2 -c ~/.config/tint2/minimal.tint2rc &
+nm-applet &
+blueman-applet &
+feh --no-fehbg --bg-scale /home/ricardo/Pictures/BG/wallhaven-od5lm7.png /home/ricardo/Pictures/BG/wallhaven-ne2zzl.png &
+flameshot &
+volumeicon &
+numlockx &
+xset s 1200 1200          # screen saver timeout: 1200 seconds (20 mins)
+xset dpms 0 0 1800        # DPMS off after 1800 seconds (30 mins)
+

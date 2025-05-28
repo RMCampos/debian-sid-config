@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Mozilla Firefox" icons="/usr/share/icons/hicolor/48x48/apps/firefox-esr.png">
+    <action name="Execute"><execute>firefox-esr</execute></action>
+  </item>
+  <item label="Xfce4 Terminal" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.terminalemulator.png">
+    <action name="Execute"><execute>xfce4-terminal</execute></action>
+  </item>
+  <menu id="accela-menu" label="Accela">
+    <item label="Microsoft Edge" icon="/usr/share/icons/hicolor/48x48/apps/microsoft-edge.png">
+      <action name="Execute"><command>microsoft-edge-stable</command></action>
+    </item>
+    <item label="Mousepad" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
+      <action name="Execute"><command>mousepad</command></action>
+    </item>
+    <item label="Slack" icon="/usr/share/pixmaps/slack.png">
+      <action name="Execute"><command>slack</command></action>
+    </item>
+    <item label="Zoom Workplace" icon="/usr/share/pixmaps/application-x-zoom.png">
+      <action name="Execute"><command>/home/ricardo/bin/launch-zoom.sh</command></action>
+    </item>
+  </menu>
+  <menu id="files-edit" label="Config editor">
+    <item label="Menu Editor">
+      <action name="Execute"><command>code .config/openbox/menu.xml</command></action>
+    </item>
+    <item label="Auto Start Editor">
+      <action name="Execute"><command>code .config/openbox/autostart</command></action>
+    </item>
+    <item label="RC Editor">
+      <action name="Execute"><command>code .config/openbox/rc.xml</command></action>
+    </item>
+    <item label="X Init RC">
+      <action name="Execute"><command>code ~/.xinitrc</command></action>
+    </item>
+  </menu>
+  <menu id="quick-open" label="Quick Access">
+    <item label="Bruno" icon="/usr/share/icons/hicolor/48x48/apps/bruno.png">
+      <action name="Execute"><command>bruno</command></action>
+    </item>
+    <item label="DBeaver" icon="/usr/share/dbeaver-ce/dbeaver.png">
+      <action name="Execute"><command>dbeaver-ce</command></action>
+    </item>
+    <item label="Discord" icon="/usr/share/discord/discord.png">
+      <action name="Execute"><command>discord</command></action>
+    </item>
+    <item label="Mate Calculator" icon="/usr/share/icons/mate/48x48/apps/accessories-calculator.png">
+      <action name="Execute"><command>mate-calc</command></action>
+    </item>
+    <item label="OBS Studio" icon="/usr/share/icons/hicolor/128x128/apps/com.obsproject.Studio.png">
+      <action name="Execute"><command>obs</command></action>
+    </item>
+    <item label="Visual Studio Code" icon="/usr/share/pixmaps/vscode.png">
+      <action name="Execute"><command>code</command></action>
+    </item>
+    <item label="Volume Control" icon="/usr/share/icons/hicolor/48x48/apps/xfce4-pulseaudio-plugin.png">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+  </menu>
+  <separator />
+  <!-- This requires the presence of the 'obamenu' package to work -->
+  <menu id="/Debian" />
+  <separator />
+  <menu id="applications-menu" label="Applications" execute="/usr/bin/obamenu"/>
+  <separator />
+  <item label="ObConf">
+    <action name="Execute"><execute>obconf</execute></action>
+  </item>
+  <item label="Reconfigure">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Restart">
+    <action name="Restart" />
+  </item>
+  <separator />
+  <item label="Exit">
+    <action name="Exit" />
+  </item>
+</menu>
+
+</openbox_menu>
