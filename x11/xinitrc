@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Get list of connected displays
+CONNECTED=$(xrandr | grep " connected" | cut -d' ' -f1)
+
+# Set external and internal output names 
+EXTERNAL="HDMI-1"
+INTERNAL="eDP-1"
+
+if echo $CONNECTED | grep -q "$EXTERNAL"; then
+    xrandr --output "$EXTERNAL" --primary --auto --output DP-1 --mode 1920x1080 --right-of "$EXTERNAL" --output "$INTERNAL" --off
+else
+    xrandr --output "$INTERNAL" --primary --auto
+fi
+
+# Export required environment variables
+export XDG_CURRENT_DESKTOP=openbox
+export XDG_SESSION_TYPE=x11
+export DESKTOP_SESSION=openbox
+
+# Start dbus session
+#if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+#  eval "$(dbus-launch --sh-syntax --exit-with-session)"
+#fi
+
+# Start the Openbox window manager. For XFCE4 use: startxfce4
+exec dbus-run-session -- openbox-session
