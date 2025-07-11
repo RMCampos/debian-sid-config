@@ -4,11 +4,16 @@
 CONNECTED=$(xrandr | grep " connected" | cut -d' ' -f1)
 
 # Set external and internal output names 
-EXTERNAL="HDMI-1"
+EXTERNAL_LEFT="HDMI-1"
+EXTERNAL_RIGHT="DP-1"
 INTERNAL="eDP-1"
 
 if echo $CONNECTED | grep -q "$EXTERNAL"; then
-    xrandr --output "$EXTERNAL" --primary --auto --output DP-1 --mode 1920x1080 --right-of "$EXTERNAL" --output "$INTERNAL" --off
+    #xrandr --output "$EXTERNAL" --primary --auto --output DP-1 --mode 1920x1080 --right-of "$EXTERNAL" --output "$INTERNAL" --off
+    #xrandr --output "$EXTERNAL" --primary --mode 1920x1080 --output "$INTERNAL" --off
+    xrandr --output "$EXTERNAL_LEFT" --mode 1920x1080 \
+           --output "$EXTERNAL_RIGHT" --mode 1920x1080 --right-of "$EXTERNAL_LEFT" \
+           --output "$INTERNAL" --primary --mode 1920x1080 --below "$EXTERNAL_LEFT" --pos 1360x1080
 else
     xrandr --output "$INTERNAL" --primary --auto
 fi
@@ -22,6 +27,9 @@ export DESKTOP_SESSION=openbox
 #if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
 #  eval "$(dbus-launch --sh-syntax --exit-with-session)"
 #fi
+
+eval "$(ssh-agent -s)"
+SSH_ASKPASS=/usr/bin/ssh-askpass ssh-add ~/.ssh/id_ed25519 < /dev/null
 
 # Start the Openbox window manager. For XFCE4 use: startxfce4
 exec dbus-run-session -- openbox-session
