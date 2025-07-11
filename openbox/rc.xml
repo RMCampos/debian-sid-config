@@ -55,7 +55,7 @@
       D: omnipresent (on all desktops).
   -->
     <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>sans</name>
       <size>8</size>
@@ -120,13 +120,13 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>3</number>
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>Workspace 1</name>
+      <name>Workspace 2</name>
+      <name>Workspace 3</name>
+      <name>Workspace 4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -374,6 +374,64 @@
         <command>~/bin/lockscreen.sh</command>
       </action>
     </keybind>
+    
+    <!-- Tile window to the left -->
+    <keybind key="W-Left">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh left</command>
+      </action>
+    </keybind>
+    
+    <!-- Tile window to the right -->
+    <keybind key="W-Right">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh right</command>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh top</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-Down">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh bottom</command>
+      </action>
+    </keybind>
+
+    <!-- Fullscreen with margin -->
+    <keybind key="W-f">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh fullscreen</command>
+      </action>
+    </keybind>
+
+    <!-- Quarter tiling -->
+    <keybind key="W-1">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh topleft</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-2">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh topright</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-3">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh bottomleft</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-4">
+      <action name="Execute">
+        <command>~/bin/tile-window.sh bottomright</command>
+      </action>
+    </keybind>
+
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -634,6 +692,7 @@
       </mousebind>
     </context>
     <context name="Desktop">
+      <!--
       <mousebind button="Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
@@ -644,6 +703,7 @@
           <to>next</to>
         </action>
       </mousebind>
+      -->
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>

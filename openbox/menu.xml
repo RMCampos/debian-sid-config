@@ -16,8 +16,11 @@
     <item label="Microsoft Edge" icon="/usr/share/icons/hicolor/48x48/apps/microsoft-edge.png">
       <action name="Execute"><command>microsoft-edge-stable</command></action>
     </item>
-    <item label="Mousepad" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
-      <action name="Execute"><command>mousepad</command></action>
+    <item label="RDP Connection Info" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
+      <action name="Execute"><command>mousepad ~/rdp.txt</command></action>
+    </item>
+    <item label="Set Slack Icon" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.terminalemulator.png">
+      <action name="Execute"><command>bash ~/bin/seticon.sh</command></action>
     </item>
     <item label="Slack" icon="/usr/share/pixmaps/slack.png">
       <action name="Execute"><command>slack</command></action>
@@ -27,16 +30,16 @@
     </item>
   </menu>
   <menu id="files-edit" label="Config editor">
-    <item label="Menu Editor">
-      <action name="Execute"><command>code .config/openbox/menu.xml</command></action>
-    </item>
-    <item label="Auto Start Editor">
+    <item label="Openbox Autostart" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
       <action name="Execute"><command>code .config/openbox/autostart</command></action>
     </item>
-    <item label="RC Editor">
+    <item label="Openbox Menu" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
+      <action name="Execute"><command>code .config/openbox/menu.xml</command></action>
+    </item>
+    <item label="Openbox Settings" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
       <action name="Execute"><command>code .config/openbox/rc.xml</command></action>
     </item>
-    <item label="X Init RC">
+    <item label="X-Init-Rc (.xinitrc)" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
       <action name="Execute"><command>code ~/.xinitrc</command></action>
     </item>
   </menu>
@@ -50,8 +53,11 @@
     <item label="Discord" icon="/usr/share/discord/discord.png">
       <action name="Execute"><command>discord</command></action>
     </item>
-    <item label="Mate Calculator" icon="/usr/share/icons/mate/48x48/apps/accessories-calculator.png">
-      <action name="Execute"><command>mate-calc</command></action>
+    <item label="Jetbreans IDEA" icon="/home/ricardo/Packages/idea-IU-251.26927.53/bin/idea.png">
+      <action name="Execute"><command>/home/ricardo/Packages/idea-IU-251.26927.53/bin/idea</command></action>
+    </item>
+    <item label="Mousepad" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
+      <action name="Execute"><command>mousepad</command></action>
     </item>
     <item label="OBS Studio" icon="/usr/share/icons/hicolor/128x128/apps/com.obsproject.Studio.png">
       <action name="Execute"><command>obs</command></action>
@@ -61,6 +67,12 @@
     </item>
     <item label="Volume Control" icon="/usr/share/icons/hicolor/48x48/apps/xfce4-pulseaudio-plugin.png">
       <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+    <item label="Zen Browser" icon="/opt/zen/browser/chrome/icons/default/default128.png">
+      <action name="Execute"><command>/opt/zen/zen</command></action>
+    </item>
+    <item label="Zoom Workplace" icon="/usr/share/pixmaps/application-x-zoom.png">
+      <action name="Execute"><command>/home/ricardo/bin/launch-zoom.sh</command></action>
     </item>
   </menu>
   <separator />
@@ -78,6 +90,13 @@
   <item label="Restart">
     <action name="Restart" />
   </item>
+  <separator />
+    <item label="Poweroff">
+      <action name="Execute"><command>sudo poweroff</command></action>
+    </item>
+    <item label="Reboot">
+      <action name="Execute"><command>sudo reboot</command></action>
+    </item>
   <separator />
   <item label="Exit">
     <action name="Exit" />

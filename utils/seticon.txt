@@ -1,0 +1,6 @@
+- clone: https://github.com/xeyownt/xseticon
+- build and install
+- then run:
+
+xseticon -id $(xwininfo -name "general (Channel) - Accela - Slack" | grep 'Window id' | awk '{print $4}') /usr/share/pixmaps/slack.png
+
