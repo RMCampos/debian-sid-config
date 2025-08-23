@@ -16,6 +16,9 @@
     <item label="Microsoft Edge" icon="/usr/share/icons/hicolor/48x48/apps/microsoft-edge.png">
       <action name="Execute"><command>microsoft-edge-stable</command></action>
     </item>
+    <item label="Microsoft Teams" icon="/home/ricardo/.local/share/icons/hicolor/48x48/apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.png">
+      <action name="Execute"><command>/opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo "--app-url=https://teams.microsoft.com/v2/?clientType=pwa"</command></action>
+    </item>
     <item label="RDP Connection Info" icon="/usr/share/icons/hicolor/48x48/apps/org.xfce.mousepad.png">
       <action name="Execute"><command>mousepad ~/rdp.txt</command></action>
     </item>

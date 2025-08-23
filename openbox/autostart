@@ -11,8 +11,13 @@ nm-applet &
 blueman-applet &
 
 # Background manager
-#feh --no-fehbg --bg-scale /home/ricardo/Pictures/BG/wallhaven-5ge715.jpg /home/ricardo/Pictures/BG/wallhaven-5yd6d5.png &
-feh --no-fehbg --bg-tile --randomize /home/ricardo/Pictures/BGWide/* &
+#feh --no-fehbg --bg-scale /home/ricardo/Pictures/BG/red-debian-1920-1080.png /home/ricardo/Pictures/BG/red-debian-1920-1200.png /home/ricardo/Pictures/BG/red-debian-1920-1080.png 
+
+# Wide
+#feh --no-fehbg --bg-tile --randomize /home/ricardo/Pictures/BGWide/* &
+
+# Random Background
+bash ~/bin/random-wallpaper.sh &
 
 # Screenshot tool
 flameshot &
