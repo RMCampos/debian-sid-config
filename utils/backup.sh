@@ -18,6 +18,8 @@ echo "----------------------------------------" | tee -a "$LOG_FILE"
 echo "Backing up user data..." | tee -a "$LOG_FILE"
 rsync -aHAXxv \
   --exclude='.cache/' \
+  --exclude='.zen/' \
+  --exclude='.config/' \
   --exclude='.local/share/Trash/' \
   --exclude='.thumbnails/' \
   --exclude='.mozilla/firefox/*/Cache*' \
@@ -33,6 +35,7 @@ rsync -aHAXxv \
   --exclude='.composer/cache/' \
   --exclude='.cache/go-build/' \
   --exclude='node_modules/' \
+  --exclude='backup/' \
   --exclude='.git/' \
   "$HOME/" "$BACKUP_DIR/home/" 2>&1 | tee -a "$LOG_FILE"
 
@@ -66,7 +69,7 @@ sudo apt-key exportall > "$BACKUP_DIR/repositories.keys" 2>&1 | tee -a "$LOG_FIL
 echo "----------------------------------------" | tee -a "$LOG_FILE"
 echo "Backup completed at $(date)" | tee -a "$LOG_FILE"
 echo "Backup size:" | tee -a "$LOG_FILE"
-du -sh "$BACKUP_DIR" | tee -a "$LOG_FILE"
+sudo du -sh "$BACKUP_DIR" | tee -a "$LOG_FILE"
 echo "Files backed up:" | tee -a "$LOG_FILE"
-find "$BACKUP_DIR" -type f | wc -l | tee -a "$LOG_FILE"
+sudo find "$BACKUP_DIR" -type f | wc -l | tee -a "$LOG_FILE"
 

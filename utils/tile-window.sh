@@ -86,8 +86,13 @@ read -r SCREEN_WIDTH SCREEN_HEIGHT SCREEN_X SCREEN_Y MONITOR_NAME <<< "$MONITOR_
 
 # Configure panel settings based on monitor name
 # Add the monitor names that should have the panel here
-PANEL_MONITORS=("HDMI-1")  # Add your monitor names here
-#PANEL_MONITORS=("eDP-1") # Laptop
+#PANEL_MONITORS=("HDMI-1")  # Add your monitor names here
+PANEL_MONITORS=("eDP-1") # Laptop by default
+#TOTAL=$(find /sys/class/drm/card*/status -exec cat {} \; | grep -c "^connected$")
+#if [ "$TOTAL" -gt 1 ]; then
+#    PANEL_MONITORS=("HDMI-1")
+#fi
+
 PANEL_HEIGHT=40
 MARGIN=10
 BOTTOM_EXTRA=10  # Additional space to remove from bottom
